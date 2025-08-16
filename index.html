@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>📝 To-Do App</h1>
+            <p>Organize your tasks efficiently</p>
+        </div>
+
+        <div class="add-task-section">
+            <div class="input-group">
+                <div class="input-row">
+                    <input type="text" id="taskInput" placeholder="Enter your task..." />
+                    <select id="prioritySelect">
+                        <option value="low">Low Priority</option>
+                        <option value="medium" selected>Medium Priority</option>
+                        <option value="high">High Priority</option>
+                    </select>
+                </div>
+                <div class="input-row">
+                    <input type="datetime-local" id="datetimeInput" />
+                    <button class="add-btn" onclick="addTask()">Add Task</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="tasks-section">
+            <div class="stats" id="stats">
+                <div class="stat-item">
+                    <div class="stat-number" id="totalTasks">0</div>
+                    <div class="stat-label">Total Tasks</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="completedTasks">0</div>
+                    <div class="stat-label">Completed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="pendingTasks">0</div>
+                    <div class="stat-label">Pending</div>
+                </div>
+            </div>
+
+            <div class="filter-tabs">
+                <button class="tab active" onclick="filterTasks('all')">All Tasks</button>
+                <button class="tab" onclick="filterTasks('pending')">Pending</button>
+                <button class="tab" onclick="filterTasks('completed')">Completed</button>
+                <button class="tab" onclick="filterTasks('high')">High Priority</button>
+            </div>
+
+            <div id="tasksList"></div>
+
+            <div class="empty-state" id="emptyState" style="display: none;">
+                <h3>No tasks found</h3>
+                <p>Add your first task to get started!</p>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>
+    
